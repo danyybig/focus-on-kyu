@@ -4,13 +4,9 @@ function convertGoogleDriveLink(url) {
 const match = url.match(//d/([a-zA-Z0-9_-]+)/);
 
 ```
-if (!match) {
-    return url;
-}
+if (!match) return null;
 
-const fileId = match[1];
-
-return `https://drive.google.com/uc?export=view&id=${fileId}`;
+return `https://drive.google.com/uc?export=view&id=${match[1]}`;
 ```
 
 }
@@ -18,17 +14,15 @@ return `https://drive.google.com/uc?export=view&id=${fileId}`;
 fetch(SHEET_URL)
 .then(response => response.text())
 .then(csv => {
-const rows = csv.trim().split("\n").slice(1);
+const container = document.getElementById("letters-container");
 
 ```
-    const container = document.getElementById("letters-container");
+    const rows = csv.trim().split("\n").slice(1);
 
     rows.forEach(row => {
-        const rawUrl = row.trim();
+        const imageUrl = convertGoogleDriveLink(row.trim());
 
-        if (!rawUrl) return;
-
-        const imageUrl = convertGoogleDriveLink(rawUrl);
+        if (!imageUrl) return;
 
         const card = document.createElement("div");
         card.className = "letter";
@@ -36,18 +30,12 @@ const rows = csv.trim().split("\n").slice(1);
         const img = document.createElement("img");
         img.src = imageUrl;
         img.alt = "Fan Letter";
-        img.loading = "lazy";
-
-        img.onerror = () => {
-            console.error("Failed to load image:", rawUrl);
-            card.remove();
-        };
 
         card.appendChild(img);
         container.appendChild(card);
     });
 })
 .catch(error => {
-    console.error("Error loading sheet:", error);
+    console.error(error);
 });
 ```
