@@ -1,86 +1,139 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 body{
-    font-family: Georgia, serif;
+font-family: Georgia, serif;
 
-    background:
-        linear-gradient(
-            rgba(0,0,0,.55),
-            rgba(0,0,0,.55)
-        ),
-        url("images/background.jpg");
+```
+background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.55)
+    ),
+    url("images/background.jpg");
 
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
 
-    min-height:100vh;
+min-height:100vh;
+```
+
 }
 
 .overlay{
-    width:100%;
+width:100%;
 }
 
 .hero{
-    text-align:center;
-    color:white;
+text-align:center;
+color:white;
 
-    padding:120px 20px 80px;
+```
+padding:90px 20px 60px;
+```
+
 }
 
 .hero h1{
-    font-size:5rem;
+font-size:clamp(2.2rem, 7vw, 5rem);
 
-    margin-bottom:20px;
+```
+margin-bottom:20px;
 
-    text-shadow:
-        0 0 25px rgba(255,255,255,.4);
+text-shadow:
+    0 0 25px rgba(255,255,255,.4);
+
+letter-spacing:2px;
+```
+
 }
 
 .hero p{
-    max-width:700px;
+max-width:700px;
 
-    margin:auto;
+```
+margin:auto;
 
-    line-height:1.8;
+line-height:1.8;
 
-    font-size:1.15rem;
+font-size:clamp(1rem, 2vw, 1.15rem);
+
+padding:0 10px;
+```
+
 }
 
 #letters-container{
-    width:90%;
-    max-width:900px;
+width:92%;
+max-width:1100px;
 
-    margin:auto;
+```
+margin:auto;
 
-    padding-bottom:120px;
+padding-bottom:120px;
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+```
+
 }
 
 .letter{
-    background:#fdfaf2;
+background:#fdfaf2;
 
-    padding:20px;
+```
+padding:15px;
 
-    margin:50px auto;
+border-radius:12px;
 
-    border-radius:12px;
+box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
 
-    box-shadow:
-        0 15px 40px rgba(0,0,0,.25);
+transform:rotate(-1deg);
+```
 
-    transform:rotate(-1deg);
 }
 
 .letter:nth-child(even){
-    transform:rotate(1deg);
+transform:rotate(1deg);
 }
 
 .letter img{
-    width:100%;
-    display:block;
-    border-radius:6px;
+width:100%;
+height:auto;
+
+```
+display:block;
+
+border-radius:6px;
+```
+
+}
+
+@media (max-width:768px){
+
+```
+body{
+    background-attachment:scroll;
+}
+
+.hero{
+    padding:70px 16px 40px;
+}
+
+#letters-container{
+    width:95%;
+    gap:20px;
+}
+
+.letter{
+    padding:10px;
+}
+```
+
 }
