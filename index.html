@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>✦ Focus on KYU ✦</title>
+
 <style>
 
 *{
@@ -21,89 +22,85 @@ body{
 }
 
 .overlay{
-    background:rgba(0,0,0,0.60);
+    background:rgba(0,0,0,0.30);
     min-height:100vh;
-    padding:40px 20px;
+    padding:25px 20px;
 }
 
 .header{
-    max-width:900px;
+    max-width:800px;
     margin:auto;
     text-align:center;
 }
 
 .header h1{
-    font-size:clamp(1.8rem,4vw,3rem);
-    margin-bottom:12px;
-    text-shadow:0 0 20px rgba(255,255,255,0.3);
+    font-size:clamp(1.8rem,4vw,2.7rem);
+    margin-bottom:10px;
+    text-shadow:0 0 15px rgba(255,255,255,0.25);
 }
 
 .description{
-    background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(10px);
-    border-radius:20px;
-    padding:18px;
-    line-height:1.6;
-    font-size:0.9rem;
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(8px);
+    border-radius:18px;
+    padding:16px;
+    line-height:1.5;
+    font-size:0.85rem;
 }
 
 .section-title{
     text-align:center;
-    margin:35px 0 20px;
-    font-size:1.1rem;
+    margin:30px 0 20px;
+    font-size:1rem;
     letter-spacing:1px;
     opacity:0.9;
 }
-}
 
 .gallery{
-    max-width:1400px;
+    max-width:1200px;
     margin:auto;
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:35px;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:25px;
 }
 
 .letter-card{
-    background:rgba(255,255,255,0.10);
-    backdrop-filter:blur(8px);
-    border-radius:20px;
-    padding:18px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(6px);
+    border-radius:18px;
+    padding:12px;
 
     box-shadow:
-    0 15px 35px rgba(0,0,0,0.45),
-    0 5px 15px rgba(0,0,0,0.25);
+    0 10px 25px rgba(0,0,0,0.35),
+    0 3px 10px rgba(0,0,0,0.20);
 
     transition:all 0.3s ease;
 }
 
 .letter-card:hover{
-    transform:translateY(-8px);
-    box-shadow:
-    0 25px 45px rgba(0,0,0,0.55),
-    0 10px 20px rgba(0,0,0,0.35);
+    transform:translateY(-5px);
 }
 
 .letter-card h3{
     text-align:center;
-    margin-bottom:15px;
-    font-size:1.3rem;
+    margin-bottom:10px;
+    font-size:0.95rem;
+    font-weight:500;
 }
 
 .letter-card img{
     width:100%;
-    border-radius:15px;
+    border-radius:12px;
     cursor:pointer;
+    display:block;
 }
 
 .footer{
     text-align:center;
-    margin-top:70px;
-    opacity:0.9;
-    padding-bottom:30px;
+    margin-top:50px;
+    padding-bottom:25px;
+    font-size:0.9rem;
 }
-
-/* Popup */
 
 .popup{
     display:none;
@@ -131,6 +128,28 @@ body{
     color:white;
 }
 
+@media (max-width:768px){
+
+    .header h1{
+        font-size:1.7rem;
+    }
+
+    .description{
+        font-size:0.8rem;
+        padding:14px;
+    }
+
+    .section-title{
+        font-size:0.95rem;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+        max-width:400px;
+    }
+
+}
+
 </style>
 
 </head>
@@ -139,79 +158,84 @@ body{
 
 <div class="overlay">
 
+    <div class="header">
 
-<div class="header">
+        <h1>✦ Focus on KYU ✦</h1>
 
-    <h1>✦ Focus on KYU ✦</h1>
+        <div class="description">
+            Created by kyuties.<br><br>
 
-    <div class="description">
-        created by kyuties.
-
-        Through your handwritten letters, music and kindness,
-        you've made countless people feel appreciated and understood.
-
-        These letters are our way of giving that love back.
+            Through your handwritten letters, music and kindness,
+            you've made countless people feel appreciated and understood.
+            <br><br>
+            These letters are our way of giving that love back.
+        </div>
 
     </div>
 
-</div>
+    <h2 class="section-title">Letters From kyuties 💌</h2>
 
-<h2 class="section-title">Letters From kyuties 💌</h2>
+    <div class="gallery">
 
-<div class="gallery">
+        <div class="letter-card">
+            <h3>From Lily 💌</h3>
+            <img src="letter1.jpg" alt="Letter from Lily">
+        </div>
 
-    <div class="letter-card">
-        <h3>From lily 💌</h3>
-        <img src="letter1.jpg" alt="Letter from Lily">
+        <div class="letter-card">
+            <h3>From Vanny 💌</h3>
+            <img src="letter2.jpg" alt="Letter from Vanny">
+        </div>
+
+        <div class="letter-card">
+            <h3>From Ely 💌</h3>
+            <img src="letter3.jpg" alt="Letter from Ely">
+        </div>
+
+        <div class="letter-card">
+            <h3>From GeekedKyu 💌</h3>
+            <img src="letter4.jpg" alt="Letter from GeekedKyu">
+        </div>
+
+        <div class="letter-card">
+            <h3>From Shally 💌</h3>
+            <img src="letter5.jpg" alt="Letter from Shally">
+        </div>
+
+        <div class="letter-card">
+            <h3>From Morgan 💌</h3>
+            <img src="letter6.jpg" alt="Letter from Morgan">
+        </div>
+
+        <div class="letter-card">
+            <h3>From Kyutie 💌</h3>
+            <img src="letter7.jpg" alt="Letter from Kyutie">
+        </div>
+
+        <!-- Add more letters below like this:
+
+        <div class="letter-card">
+            <h3>From Name 💌</h3>
+            <img src="letter8.jpg" alt="Letter from Name">
+        </div>
+
+        -->
+
     </div>
 
-    <div class="letter-card">
-        <h3>From vanny 💌</h3>
-        <img src="letter2.jpg" alt="Letter from vanny">
+    <div class="footer">
+        Made with love by kyuties, for KYU ✦
+        <br>
+        <span style="font-size:0.8rem; opacity:0.75;">
+            Organised by Lily
+        </span>
     </div>
-
-    <div class="letter-card">
-        <h3>From ely 💌</h3>
-        <img src="letter3.jpg" alt="Letter from ely">
-    </div>
-
-     <div class="letter-card">
-        <h3>From geekedkyu 💌</h3>
-        <img src="letter4.jpg" alt="Letter from geekedkyu">
-    </div>
-
-     <div class="letter-card">
-        <h3>From shally 💌</h3>
-        <img src="letter5.jpg" alt="Letter from shally">
-    </div>
-
-     <div class="letter-card">
-        <h3>From morgan 💌</h3>
-        <img src="letter6.jpg" alt="Letter from morgan">
-    </div>
-
-     <div class="letter-card">
-        <h3>From kyutie 💌</h3>
-        <img src="letter7.jpg" alt="Letter from kyutie">
-    </div>
-
-    <!-- Add more letters here -->
-
-</div>
-
-<div class="footer">
-    Made with love by kyuties, for KYU ✦
-    <br>
-    <span style="font-size:0.8rem; opacity:0.75;">
-        Organised by Lily
-    </span>
-</div>
 
 </div>
 
 <div class="popup" id="popup">
     <span class="close">&times;</span>
-    <img id="popupImg">
+    <img id="popupImg" alt="Expanded letter">
 </div>
 
 <script>
