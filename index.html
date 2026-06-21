@@ -1,36 +1,226 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Focus on Kyu</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="style.css">
+<title>✦ Focus on Q ✦</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:url("background.jpg") center center/cover no-repeat fixed;
+    color:white;
+}
+
+.overlay{
+    background:rgba(0,0,0,0.60);
+    min-height:100vh;
+    padding:40px 20px;
+}
+
+.header{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+}
+
+.header h1{
+    font-size:clamp(2.8rem,6vw,5rem);
+    margin-bottom:20px;
+    text-shadow:0 0 20px rgba(255,255,255,0.3);
+}
+
+.description{
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:25px;
+    line-height:1.8;
+    font-size:1.05rem;
+}
+
+.section-title{
+    text-align:center;
+    margin:60px 0 35px;
+    font-size:2rem;
+}
+
+.gallery{
+    max-width:1400px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+.letter-card{
+    background:rgba(255,255,255,0.10);
+    backdrop-filter:blur(8px);
+    border-radius:20px;
+    padding:18px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,0.45),
+    0 5px 15px rgba(0,0,0,0.25);
+
+    transition:all 0.3s ease;
+}
+
+.letter-card:hover{
+    transform:translateY(-8px);
+    box-shadow:
+    0 25px 45px rgba(0,0,0,0.55),
+    0 10px 20px rgba(0,0,0,0.35);
+}
+
+.letter-card h3{
+    text-align:center;
+    margin-bottom:15px;
+    font-size:1.3rem;
+}
+
+.letter-card img{
+    width:100%;
+    border-radius:15px;
+    cursor:pointer;
+}
+
+.footer{
+    text-align:center;
+    margin-top:70px;
+    opacity:0.9;
+    padding-bottom:30px;
+}
+
+/* Popup */
+
+.popup{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.9);
+    z-index:999;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.popup img{
+    max-width:95%;
+    max-height:95%;
+    border-radius:15px;
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:25px;
+    font-size:40px;
+    cursor:pointer;
+    color:white;
+}
+
+</style>
+
 </head>
+
 <body>
 
-  <div class="overlay">
+<div class="overlay">
 
-    <header class="hero">
-      <h1>✦ FOCUS ON KYU ✦</h1>
+```
+<div class="header">
 
-      <p>
-        A collection of handwritten letters from fans around the world,
-        celebrating Kyu's comeback.
-      </p>
-    </header>
+    <h1>✦ Focus on Q ✦</h1>
 
-    <main>
-      <div id="letters-container">
+    <div class="description">
+        This project was created by fans, for Q.
 
-        <!-- Letters from Google Sheet appear here -->
+        Through your handwritten letters, music, and kindness,
+        you've made countless people feel appreciated and understood.
 
-      </div>
-    </main>
+        These letters are our way of giving that love back.
 
-  </div>
+        Every photo below contains a handwritten message from a fan,
+        written especially for you.
 
-  <script src="script.js"></script>
+        Thank you for everything you've done for us.
+
+        With love,
+        Your fans.
+    </div>
+
+</div>
+
+<h2 class="section-title">Letters From Fans 💌</h2>
+
+<div class="gallery">
+
+    <div class="letter-card">
+        <h3>From Lily 💌</h3>
+        <img src="letter1.jpg" alt="Letter from Lily">
+    </div>
+
+    <div class="letter-card">
+        <h3>From Kiza 💌</h3>
+        <img src="letter2.jpg" alt="Letter from Kiza">
+    </div>
+
+    <div class="letter-card">
+        <h3>From Sarah 💌</h3>
+        <img src="letter3.jpg" alt="Letter from Sarah">
+    </div>
+
+    <!-- Add more letters here -->
+
+</div>
+
+<div class="footer">
+    Made with love by fans, for Q ✦
+</div>
+```
+
+</div>
+
+<div class="popup" id="popup">
+    <span class="close">&times;</span>
+    <img id="popupImg">
+</div>
+
+<script>
+
+const popup = document.getElementById("popup");
+const popupImg = document.getElementById("popupImg");
+
+document.querySelectorAll(".letter-card img").forEach(img => {
+
+    img.addEventListener("click", () => {
+        popup.style.display = "flex";
+        popupImg.src = img.src;
+    });
+
+});
+
+document.querySelector(".close").addEventListener("click", () => {
+    popup.style.display = "none";
+});
+
+popup.addEventListener("click", (e) => {
+    if(e.target === popup){
+        popup.style.display = "none";
+    }
+});
+
+</script>
 
 </body>
 </html>
